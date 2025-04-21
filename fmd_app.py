@@ -11,7 +11,7 @@ import numpy as np
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 
 
-model = load_model(r'FMD.keras')    # Loading model
+model = load_model(r'FMD.h5')    # Loading model
 best_threshold = 0.4560450613498688
 
 # Creating require functions
