@@ -8,10 +8,20 @@ from tensorflow.keras.models import load_model
 import cv2
 import numpy as np
 
+import gdown
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 
 
 model = load_model(r'FMD.h5')    # Loading model
+# https://drive.google.com/file/d/1sYkB8epf6y0JrVLDis4n8O-Z9dMjZX8A/view?usp=drive_link    Google's like to the saved mofel
+
+# Only download if it doesn't already exist
+if not os.path.exists(model_path):
+    file_id = "1sYkB8epf6y0JrVLDis4n8O-Z9dMjZX8A"
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, model_path, quiet=False)
+
+
 best_threshold = 0.4560450613498688
 
 # Creating require functions
